@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abhishek Patel's art and personal collection.">
+  <title>Abhishek Patel</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- Mobile menu button: hidden on desktop -->
+  <button class="mobile-menu-button" id="menuButton" aria-label="Open navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <a href="index.html" class="site-name">Abhishek Patel<span>.</span></a>
+      <button class="mobile-close" id="closeButton" aria-label="Close navigation">×</button>
+    </div>
+
+    <div class="sidebar-intro">
+      <p>Artist, engineer and an enthusiast of many things.</p>
+      <span class="location">Mumbai, India</span>
+    </div>
+
+    <nav class="navigation">
+      <span class="nav-label">MENU</span>
+      <a href="index.html" class="nav-link active">Art</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="now.html" class="nav-link">Now</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span class="nav-label">ELSEWHERE</span>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="mailto:hello@example.com">Email ↗</a>
+
+      <p class="copyright">© 2026 Abhishek Patel</p>
+    </div>
+
+  </aside>
+
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main content -->
+  <main class="main-content">
+
+    <div class="page-content">
+
+      <!-- Introduction -->
+      <section class="intro">
+        <h1>Things I've made.</h1>
+        <p>
+          A collection of paintings, drawings, experiments
+          and other things made along the way.
+        </p>
+      </section>
+
+      <!-- Gallery -->
+      <section class="gallery-section">
+
+        <div class="gallery-heading">
+          <h2>Artworks</h2>
+
+          <span class="artwork-count" id="artworkCount">
+            18 works
+          </span>
+        </div>
+
+        <!-- Gallery filters -->
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">Everything</button>
+          <button class="filter" data-filter="watercolor">Watercolor</button>
+          <button class="filter" data-filter="rangoli">Rangoli</button>
+          <button class="filter" data-filter="other">Other</button>
+        </div>
+
+        <!-- Artwork grid -->
+        <div class="artwork-grid" id="artworkGrid">
+
+          <article class="artwork-card" data-category="watercolor" data-title="FeLiNa" data-year="2021">
+            <button class="artwork-open" aria-label="View FeLiNa">
+              <img src="./images/FeLiNa.jpeg" alt="FeLiNa">
+              <div class="artwork-placeholder"><span>FeLiNa</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">FeLiNa</span><span class="artwork-year">2021</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="rangoli" data-title="Shiva" data-year="2021">
+            <button class="artwork-open" aria-label="View Shiva">
+              <img src="./images/Shiva.jpeg" alt="Shiva">
+              <div class="artwork-placeholder"><span>Shiva</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">Shiva</span><span class="artwork-year">2021</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="come back to earth" data-year="2021">
+            <button class="artwork-open" aria-label="View come back to earth">
+              <img src="./images/come back to earth.jpeg" alt="come back to earth">
+              <div class="artwork-placeholder"><span>come back to earth</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">come back to earth</span><span class="artwork-year">2021</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="fumes" data-year="2020">
+            <button class="artwork-open" aria-label="View fumes">
+              <img src="./images/fumes.jpeg" alt="fumes">
+              <div class="artwork-placeholder"><span>fumes</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">fumes</span><span class="artwork-year">2020</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="rangoli" data-title="ganesha" data-year="2020">
+            <button class="artwork-open" aria-label="View ganesha">
+              <img src="./images/ganesha.jpeg" alt="ganesha">
+              <div class="artwork-placeholder"><span>ganesha</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">ganesha</span><span class="artwork-year">2020</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="godzilla" data-year="2020">
+            <button class="artwork-open" aria-label="View godzilla">
+              <img src="./images/godzilla.jpeg" alt="godzilla">
+              <div class="artwork-placeholder"><span>godzilla</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">godzilla</span><span class="artwork-year">2020</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="hny" data-year="2018">
+            <button class="artwork-open" aria-label="View hny">
+              <img src="./images/hny.jpeg" alt="hny">
+              <div class="artwork-placeholder"><span>hny</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">hny</span><span class="artwork-year">2018</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="hobbies" data-year="2020">
+            <button class="artwork-open" aria-label="View hobbies">
+              <img src="./images/hobbies.jpeg" alt="hobbies">
+              <div class="artwork-placeholder"><span>hobbies</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">hobbies</span><span class="artwork-year">2020</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="jerm" data-year="2020">
+            <button class="artwork-open" aria-label="View jerm">
+              <img src="./images/jerm.jpg" alt="jerm">
+              <div class="artwork-placeholder"><span>jerm</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">jerm</span><span class="artwork-year">2020</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="jin" data-year="2020">
+            <button class="artwork-open" aria-label="View jin">
+              <img src="./images/jin.jpeg" alt="jin">
+              <div class="artwork-placeholder"><span>jin</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">jin</span><span class="artwork-year">2020</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="mac" data-year="Year unavailable">
+            <button class="artwork-open" aria-label="View mac">
+              <img src="./images/mac.jpeg" alt="mac">
+              <div class="artwork-placeholder"><span>mac</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">mac</span><span class="artwork-year">Year unavailable</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="migraine" data-year="2018">
+            <button class="artwork-open" aria-label="View migraine">
+              <img src="./images/migraine.jpg" alt="migraine">
+              <div class="artwork-placeholder"><span>migraine</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">migraine</span><span class="artwork-year">2018</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="mike" data-year="2019">
+            <button class="artwork-open" aria-label="View mike">
+              <img src="./images/mike.jpeg" alt="mike">
+              <div class="artwork-placeholder"><span>mike</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">mike</span><span class="artwork-year">2019</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="mugen" data-year="Year unavailable">
+            <button class="artwork-open" aria-label="View mugen">
+              <img src="./images/mugen.jpg" alt="mugen">
+              <div class="artwork-placeholder"><span>mugen</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">mugen</span><span class="artwork-year">Year unavailable</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="she lives in a different nation" data-year="Year unavailable">
+            <button class="artwork-open" aria-label="View she lives in a different nation">
+              <img src="./images/she lives in a different nation.jpeg" alt="she lives in a different nation">
+              <div class="artwork-placeholder"><span>she lives in a different nation</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">she lives in a different nation</span><span class="artwork-year">Year unavailable</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="stupid deep" data-year="2019">
+            <button class="artwork-open" aria-label="View stupid deep">
+              <img src="./images/stupid deep.jpeg" alt="stupid deep">
+              <div class="artwork-placeholder"><span>stupid deep</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">stupid deep</span><span class="artwork-year">2019</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="other" data-title="vaas" data-year="2018">
+            <button class="artwork-open" aria-label="View vaas">
+              <img src="./images/vaas.jpeg" alt="vaas">
+              <div class="artwork-placeholder"><span>vaas</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">vaas</span><span class="artwork-year">2018</span></div>
+            </button>
+          </article>
+
+          <article class="artwork-card" data-category="watercolor" data-title="waterfall" data-year="2021">
+            <button class="artwork-open" aria-label="View waterfall">
+              <img src="./images/waterfall.jpeg" alt="waterfall">
+              <div class="artwork-placeholder"><span>waterfall</span></div>
+              <div class="artwork-overlay"><span class="artwork-name">waterfall</span><span class="artwork-year">2021</span></div>
+            </button>
+          </article>
+
+        </div>
+
+        <p class="empty-message" id="emptyMessage" hidden>
+          No artworks in this category yet.
+        </p>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Fullscreen artwork viewer -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">
+      ×
+    </button>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-caption">
+      <span id="lightboxTitle"></span>
+      <span id="lightboxYear"></span>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
