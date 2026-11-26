@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal collection of things Abhishek owns and enjoys.">
+  <title>Things | Abhishek Patel</title>
+  <script>
+    (() => {
+      const theme = localStorage.getItem("site-theme");
+      const hour = new Date().getHours();
+      document.documentElement.dataset.theme =
+        theme === "light" || theme === "dark"
+          ? theme
+          : hour >= 6 && hour < 18 ? "light" : "dark";
+    })();
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <button class="mobile-menu-button" id="menuButton" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <a href="index.html" class="site-name">Abhishek Patel<span>.</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path>
+        </svg>
+      </button>
+      <button class="mobile-close" id="closeButton" aria-label="Close navigation">×</button>
+    </div>
+
+    <div class="sidebar-intro">
+      <p>Artist, engineer and an enthusiast of many things.</p>
+      <span class="location">Mumbai, India</span>
+    </div>
+
+    <nav class="navigation">
+      <span class="nav-label">MENU</span>
+      <a href="index.html" class="nav-link">Art</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="things.html" class="nav-link active">Things</a>
+      <a href="digital-garden.html" class="nav-link">Digital Garden</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span class="nav-label">ELSEWHERE</span>
+      <a href="https://www.instagram.com/abshk98/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://www.linkedin.com/in/abshk98/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="mailto:abhishekpate9803@gmail.com">Email ↗</a>
+      <p class="copyright">© 2026 Abhishek Patel</p>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main class="main-content">
+    <div class="page-content things-page">
+      <section class="intro">
+        <h1>Things I own &amp; love.</h1>
+        <p>A little catalogue of things I use, enjoy and hope to own someday.</p>
+      </section>
+
+      <div class="things-toolbar">
+        <div class="thing-status-filters" aria-label="Filter by ownership">
+          <button class="filter active" type="button" data-status="all">Everything</button>
+          <button class="filter" type="button" data-status="owned">Owned</button>
+          <button class="filter" type="button" data-status="wishlist">Wishlist</button>
+        </div>
+        <label class="visually-hidden" for="search">Search things</label>
+        <input class="thing-search" id="search" type="search" placeholder="Search things...">
+      </div>
+
+      <div class="thing-categories" id="categories" aria-label="Filter by category"></div>
+
+      <section class="things-section">
+        <div class="gallery-heading">
+          <h2 id="section-title">Everything</h2>
+          <span class="artwork-count" id="product-count"></span>
+        </div>
+        <div class="things-grid" id="product-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+  <script src="./things.js"></script>
+</body>
+</html>

@@ -7,6 +7,16 @@
   <meta name="description" content="Abhishek Patel's art and personal collection.">
   <title>Abhishek Patel</title>
 
+  <script>
+    (() => {
+      const theme = localStorage.getItem("site-theme");
+      const hour = new Date().getHours();
+      document.documentElement.dataset.theme =
+        theme === "light" || theme === "dark"
+          ? theme
+          : hour >= 6 && hour < 18 ? "light" : "dark";
+    })();
+  </script>
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -24,6 +34,15 @@
 
     <div class="sidebar-top">
       <a href="index.html" class="site-name">Abhishek Patel<span>.</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path>
+        </svg>
+      </button>
       <button class="mobile-close" id="closeButton" aria-label="Close navigation">×</button>
     </div>
 
@@ -36,17 +55,19 @@
       <span class="nav-label">MENU</span>
       <a href="index.html" class="nav-link active">Art</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="now.html" class="nav-link">Now</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="things.html" class="nav-link">Things</a>
+      <a href="digital-garden.html" class="nav-link">Digital Garden</a>
     </nav>
 
     <div class="sidebar-bottom">
       <span class="nav-label">ELSEWHERE</span>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a href="mailto:hello@example.com">Email ↗</a>
+      <a href="https://www.instagram.com/abshk98/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://www.linkedin.com/in/abshk98/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="mailto:abhishekpate9803@gmail.com">Email ↗</a>
 
-      <p class="copyright">© 2026 Abhishek Patel</p>
+      <div class="sidebar-footer-meta">
+        <p class="copyright">© 2026 Abhishek Patel</p>
+      </div>
     </div>
 
   </aside>
@@ -56,7 +77,6 @@
 
   <!-- Main content -->
   <main class="main-content">
-
     <div class="page-content">
 
       <!-- Introduction -->

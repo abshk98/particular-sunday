@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A little about Abhishek Patel, an artist, engineer and enthusiast of many things.">
+  <title>About | Abhishek Patel</title>
+  <script>
+    (() => {
+      const theme = localStorage.getItem("site-theme");
+      const hour = new Date().getHours();
+      document.documentElement.dataset.theme =
+        theme === "light" || theme === "dark"
+          ? theme
+          : hour >= 6 && hour < 18 ? "light" : "dark";
+    })();
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <button class="mobile-menu-button" id="menuButton" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <a href="index.html" class="site-name">Abhishek Patel<span>.</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path>
+        </svg>
+      </button>
+      <button class="mobile-close" id="closeButton" aria-label="Close navigation">×</button>
+    </div>
+
+    <div class="sidebar-intro">
+      <p>Artist, engineer and an enthusiast of many things.</p>
+      <span class="location">Mumbai, India</span>
+    </div>
+
+    <nav class="navigation">
+      <span class="nav-label">MENU</span>
+      <a href="index.html" class="nav-link">Art</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="things.html" class="nav-link">Things</a>
+      <a href="digital-garden.html" class="nav-link">Digital Garden</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span class="nav-label">ELSEWHERE</span>
+      <a href="https://www.instagram.com/abshk98/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://www.linkedin.com/in/abshk98/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://abshk.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
+      <a href="mailto:abhishekpate9803@gmail.com">Email ↗</a>
+      <p class="copyright">© 2026 Abhishek Patel</p>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main class="main-content">
+    <div class="page-content about-page">
+      <section class="about-intro">
+        <div>
+          <h1>A little about me.</h1>
+          <p>
+            I'm Abhishek. Chemical engineer by education,
+            artist by inclination, and an enthusiast of many things.
+          </p>
+          <p>
+            I work in strategy and new initiatives, where I spend
+            a fair amount of time trying to make chemistry look
+            profitable in ten slides or less.
+          </p>
+          <p>
+            Outside work, I spend time making <a href="index.html">art</a>,
+            taking <a href="things.html">photographs</a>,
+            going on <a href="things.html?filter=Automotive">motorcycle rides</a>
+            through the Sahyadris during monsoon,
+            playing <a href="things.html">sports</a>,
+            looking after <a href="things.html">plants</a>,
+            making <a href="things.html">coffee</a>
+            and collecting <a href="things.html">things</a>
+            I probably don't need.
+          </p>
+          <p>
+            I like learning new skills, building little things
+            and going down rabbit holes. I've never been particularly
+            good at sticking to one discipline. There are too many
+            interesting things to explore and not nearly enough time
+            to explore all of them.
+          </p>
+        </div>
+
+        <div class="about-photo">
+          <div class="photo-placeholder" role="img" aria-label="Portrait photo placeholder">Portrait photo</div>
+          <div class="photo-caption">A reasonably recent photograph of me.</div>
+        </div>
+      </section>
+
+      <section class="renaissance-section" id="renaissance">
+        <p class="renaissance-lead">Always becoming:</p>
+        <h2 class="renaissance-title">Renaissance man.</h2>
+        <p class="renaissance-subtitle">Trait: curiosity. Weakness: too many side quests. Special ability: doing things just because.</p>
+
+        <div class="renaissance-skills" aria-label="Skill inventory">
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Rubik's Cube</h3><span>90</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Rubik's Cube" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90"><span style="--skill-level: 90%"></span></div>
+            <p class="renaissance-description">Got this figured out</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Table Tennis</h3><span>88</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Table Tennis" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88"><span style="--skill-level: 88%"></span></div>
+            <p class="renaissance-description">Pretty comfortable</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Jump Rope</h3><span>82</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Jump Rope" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82"><span style="--skill-level: 82%"></span></div>
+            <p class="renaissance-description">In my element</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Drawing &amp; Painting</h3><span>80</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Drawing and Painting" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><span style="--skill-level: 80%"></span></div>
+            <p class="renaissance-description">Finding my groove</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Driving</h3><span>80</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Driving" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><span style="--skill-level: 80%"></span></div>
+            <p class="renaissance-description">Quite enjoying this one</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Volleyball</h3><span>68</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Volleyball" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span style="--skill-level: 68%"></span></div>
+            <p class="renaissance-description">Still got it</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Gym &amp; Fitness</h3><span>65</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Gym and Fitness" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><span style="--skill-level: 65%"></span></div>
+            <p class="renaissance-description">A work in progress</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Fast Typing</h3><span>52</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Fast Typing" aria-valuemin="0" aria-valuemax="100" aria-valuenow="52"><span style="--skill-level: 52%"></span></div>
+            <p class="renaissance-description">Could be faster</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Cooking</h3><span>42</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Cooking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42"><span style="--skill-level: 42%"></span></div>
+            <p class="renaissance-description">Decent enough</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Swimming</h3><span>40</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Swimming" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><span style="--skill-level: 40%"></span></div>
+            <p class="renaissance-description">Getting there</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Vibe Coding</h3><span>38</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Vibe Coding" aria-valuemin="0" aria-valuemax="100" aria-valuenow="38"><span style="--skill-level: 38%"></span></div>
+            <p class="renaissance-description">Building things with AI and figuring out what's happening underneath</p>
+          </article>
+          <article class="renaissance-skill" tabindex="0">
+            <div class="renaissance-skill-heading"><h3>Ukulele</h3><span>30</span></div>
+            <div class="renaissance-meter" role="meter" aria-label="Ukulele" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30"><span style="--skill-level: 30%"></span></div>
+            <p class="renaissance-description">A few chords deep</p>
+          </article>
+        </div>
+
+        <div class="renaissance-notes">
+          <section class="quest-log">
+            <h3>The Quest Log</h3>
+            <ul>
+              <li><span>Journaling</span><span class="quest-status is-started">JUST STARTED</span></li>
+              <li><span>Writing</span><span class="quest-status is-next">NEXT QUEST</span></li>
+              <li><span>Other side quests</span><span class="quest-status is-later"><span data-quest-count>1,247</span> more</span></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="photo-grid">
+        <figure>
+          <div class="photo-placeholder" role="img" aria-label="Personal photo placeholder">Photo</div>
+          <figcaption>Somewhere along the way.</figcaption>
+        </figure>
+        <figure>
+          <div class="photo-placeholder" role="img" aria-label="Personal photo placeholder">Photo</div>
+          <figcaption>Collected moments.</figcaption>
+        </figure>
+        <figure>
+          <div class="photo-placeholder" role="img" aria-label="Personal photo placeholder">Photo</div>
+          <figcaption>Outside the usual routine.</figcaption>
+        </figure>
+      </section>
+
+      <section class="about-section timeline-section">
+        <h2>The boring stuff</h2>
+        <p class="section-subtitle">The college-to-corporate story.</p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-date">2023–Present</span>
+            <div class="timeline-content">
+              <h3>UPL</h3>
+              <p>Trying to make chemistry look profitable in 10 slides or less.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">2021–23</span>
+            <div class="timeline-content">
+              <h3>IIT Kharagpur</h3>
+              <p>Best chapter yet.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">2016–20</span>
+            <div class="timeline-content">
+              <h3>NIT Surat</h3>
+              <p>Couldn't get into IIT, so here we are. Played volleyball.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="elsewhere">
+        <div class="kicker">Elsewhere</div>
+        <h2>Find me around the internet.</h2>
+        <p>I share some of my work, thoughts and occasional observations in these corners of the internet.</p>
+        <div class="about-links">
+          <a href="https://www.instagram.com/abshk98/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://www.linkedin.com/in/abshk98/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://abshk.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
+          <a href="mailto:abhishekpate9803@gmail.com">Email ↗</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

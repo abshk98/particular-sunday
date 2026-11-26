@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal collection of music, art, reading and internet finds by Abhishek Patel.">
+  <title>Digital Garden | Abhishek Patel</title>
+  <script>
+    (() => {
+      const theme = localStorage.getItem("site-theme");
+      const hour = new Date().getHours();
+      document.documentElement.dataset.theme =
+        theme === "light" || theme === "dark"
+          ? theme
+          : hour >= 6 && hour < 18 ? "light" : "dark";
+    })();
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <button class="mobile-menu-button" id="menuButton" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <a href="index.html" class="site-name">Abhishek Patel<span>.</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path>
+        </svg>
+      </button>
+      <button class="mobile-close" id="closeButton" aria-label="Close navigation">×</button>
+    </div>
+
+    <div class="sidebar-intro">
+      <p>Artist, engineer and an enthusiast of many things.</p>
+      <span class="location">Mumbai, India</span>
+    </div>
+
+    <nav class="navigation">
+      <span class="nav-label">MENU</span>
+      <a href="index.html" class="nav-link">Art</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="things.html" class="nav-link">Things</a>
+      <a href="digital-garden.html" class="nav-link active" aria-current="page">Digital Garden</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span class="nav-label">ELSEWHERE</span>
+      <a href="https://www.instagram.com/abshk98/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://www.linkedin.com/in/abshk98/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://abshk.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
+      <a href="mailto:abhishekpate9803@gmail.com">Email ↗</a>
+      <p class="copyright">© 2026 Abhishek Patel</p>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main class="main-content">
+    <div class="page-content garden-page" id="garden-top">
+      <header class="garden-intro">
+        <h1>Digital Garden</h1>
+        <p>A collection of things I've stumbled upon, fallen in love with, found useful or wanted to remember.</p>
+        <span class="garden-tended">Last tended: November 2026</span>
+      </header>
+
+      <nav class="garden-index" aria-label="Digital Garden collections">
+        <a href="#soundtrack">The Soundtrack</a>
+        <a href="#art-shelf">The Art Shelf</a>
+        <a href="#reading-room">The Reading Room</a>
+        <a href="#internet-finds">Internet Finds</a>
+        <a href="#loose-thoughts">Loose Thoughts</a>
+      </nav>
+
+      <section class="garden-section" id="soundtrack">
+        <div class="garden-section-heading">
+          <h2>The Soundtrack</h2>
+        </div>
+        <div id="garden-soundtrack"></div>
+      </section>
+
+      <section class="garden-section" id="art-shelf">
+        <div class="garden-section-heading">
+          <h2>The Art Shelf</h2>
+        </div>
+        <div id="garden-art-shelf"></div>
+      </section>
+
+      <section class="garden-section" id="reading-room">
+        <div class="garden-section-heading">
+          <h2>The Reading Room</h2>
+        </div>
+        <div id="garden-reading-room"></div>
+      </section>
+
+      <section class="garden-section" id="internet-finds">
+        <div class="garden-section-heading">
+          <h2>Internet Finds</h2>
+        </div>
+        <div id="garden-internet-finds"></div>
+      </section>
+
+      <section class="garden-section" id="loose-thoughts">
+        <div class="garden-section-heading">
+          <h2>Loose Thoughts</h2>
+        </div>
+        <div id="garden-loose-thoughts"></div>
+      </section>
+
+      <a class="garden-back-top" href="#garden-top">Back to the top ↑</a>
+    </div>
+  </main>
+
+  <div class="garden-lightbox" id="garden-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true" hidden>
+    <button class="garden-lightbox-close" type="button" aria-label="Close image">×</button>
+    <img alt="">
+    <p class="garden-lightbox-caption"></p>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="./digital-garden.js"></script>
+</body>
+</html>
