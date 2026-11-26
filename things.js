@@ -61,6 +61,27 @@ const products = [
     status: "wishlist",
     link: "https://www.casio.com/in/watches/casio/product.MTP-E740-2A1V/",
     image: "https://www.casio.com/content/dam/casio/product-info/locales/in/en/timepiece/product/watch/M/MT/MTP/mtp-e740-2a1v/assets/MTP-E740-2A1V.png"
+  },
+  {
+    name: "Snake Plant",
+    category: "Plants",
+    status: "owned",
+    link: "",
+    image: ""
+  },
+  {
+    name: "Golden Pothos",
+    category: "Plants",
+    status: "owned",
+    link: "",
+    image: ""
+  },
+  {
+    name: "Spider Plant",
+    category: "Plants",
+    status: "owned",
+    link: "",
+    image: ""
   }
 ];
 

@@ -94,6 +94,7 @@ if (artworkGrid) {
   let visibleArtworks = [];
   let currentArtworkIndex = 0;
   let lastArtworkButton = null;
+  let swipeStart = null;
 
   function updateGallery(filter) {
     let visibleCount = 0;
@@ -144,6 +145,7 @@ if (artworkGrid) {
     lightbox.setAttribute("aria-hidden", "true");
     lightboxImage.src = "";
     document.body.style.overflow = "";
+    swipeStart = null;
     lastArtworkButton?.focus();
   }
 
@@ -181,6 +183,34 @@ if (artworkGrid) {
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) closeLightbox();
   });
+  lightbox.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) {
+      swipeStart = null;
+      return;
+    }
+
+    const touch = event.touches[0];
+    swipeStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", (event) => {
+    if (!swipeStart || event.changedTouches.length !== 1) {
+      swipeStart = null;
+      return;
+    }
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - swipeStart.x;
+    const deltaY = touch.clientY - swipeStart.y;
+    swipeStart = null;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+    moveArtwork(deltaX < 0 ? 1 : -1);
+  }, { passive: true });
+
+  lightbox.addEventListener("touchcancel", () => {
+    swipeStart = null;
+  }, { passive: true });
 
   document.addEventListener("keydown", (event) => {
     if (lightbox.classList.contains("open")) {

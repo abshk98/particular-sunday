@@ -244,6 +244,19 @@ a {
 .main-content {
   min-height: 100vh;
   margin-left: var(--sidebar-width);
+  animation: page-enter 180ms ease-out both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .page-content {
@@ -380,6 +393,15 @@ a {
   text-align: left;
 }
 
+.artwork-open:focus {
+  outline: none;
+}
+
+.artwork-open:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .artwork-open img {
   display: block;
   width: 100%;
@@ -422,8 +444,10 @@ a {
   opacity: 0;
 }
 
-.artwork-open:hover .artwork-overlay {
-  opacity: 1;
+@media (hover: hover) {
+  .artwork-open:hover .artwork-overlay {
+    opacity: 1;
+  }
 }
 
 .artwork-name {
@@ -467,6 +491,7 @@ a {
   max-width: min(90%, 1000px);
   max-height: 80vh;
   object-fit: contain;
+  touch-action: pan-y;
 }
 
 .lightbox-close {
@@ -525,6 +550,16 @@ a {
 .about-links a {
   border-bottom: 1px solid var(--border);
   transition: color 0.25s ease, border-color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.about-intro a {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.about-intro a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .about-intro a:hover,
@@ -2163,11 +2198,6 @@ a {
 }
 
 @media (hover: none) {
-  .artwork-overlay {
-    background: rgba(0, 0, 0, 0.42);
-    opacity: 1;
-  }
-
   .theme-toggle {
     opacity: 1;
     pointer-events: auto;
