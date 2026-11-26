@@ -88,13 +88,42 @@ if (artworkGrid) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const lightboxTitle = document.getElementById("lightboxTitle");
-  const lightboxYear = document.getElementById("lightboxYear");
+  const lightboxNote = document.getElementById("lightboxNote");
   const lightboxClose = document.getElementById("lightboxClose");
 
   let visibleArtworks = [];
   let currentArtworkIndex = 0;
   let lastArtworkButton = null;
   let swipeStart = null;
+  let artworkLayoutFrame = 0;
+
+  function layoutArtworkGrid() {
+    const styles = getComputedStyle(artworkGrid);
+    const rowHeight = parseFloat(styles.gridAutoRows);
+    const rowGap = parseFloat(styles.rowGap);
+
+    artworkCards.forEach((card) => {
+      if (card.classList.contains("hidden")) {
+        card.style.gridRowEnd = "";
+        return;
+      }
+
+      const image = card.querySelector("img");
+      const imageWidth = image.getBoundingClientRect().width;
+      if (!image.naturalWidth || !image.naturalHeight || !imageWidth) return;
+
+      const imageHeight = imageWidth * image.naturalHeight / image.naturalWidth;
+      const rowSpan = Math.ceil((imageHeight + rowGap) / (rowHeight + rowGap));
+      card.style.gridRowEnd = `span ${rowSpan}`;
+    });
+  }
+
+  function scheduleArtworkLayout() {
+    cancelAnimationFrame(artworkLayoutFrame);
+    artworkLayoutFrame = requestAnimationFrame(layoutArtworkGrid);
+  }
+
+  window.addEventListener("resize", scheduleArtworkLayout, { passive: true });
 
   function updateGallery(filter) {
     let visibleCount = 0;
@@ -107,6 +136,7 @@ if (artworkGrid) {
 
     artworkCount.textContent = `${visibleCount} ${visibleCount === 1 ? "work" : "works"}`;
     emptyMessage.hidden = visibleCount > 0;
+    scheduleArtworkLayout();
   }
 
   function getVisibleArtworks() {
@@ -124,7 +154,8 @@ if (artworkGrid) {
     lightboxImage.src = image.currentSrc || image.src;
     lightboxImage.alt = image.alt;
     lightboxTitle.textContent = card.dataset.title || image.alt;
-    lightboxYear.textContent = card.dataset.year || "";
+    lightboxNote.textContent = card.dataset.note || "";
+    lightboxNote.hidden = !card.dataset.note;
   }
 
   function openLightbox(card) {
@@ -160,12 +191,14 @@ if (artworkGrid) {
     image.addEventListener("load", () => {
       button.classList.add("image-loaded");
       button.classList.remove("image-missing");
+      scheduleArtworkLayout();
     });
 
     image.addEventListener("error", () => button.classList.add("image-missing"));
 
     if (image.complete && image.naturalWidth > 0) {
       button.classList.add("image-loaded");
+      scheduleArtworkLayout();
     }
 
     button.addEventListener("click", () => openLightbox(card));
